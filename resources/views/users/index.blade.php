@@ -46,5 +46,5 @@
         @endforeach
     </table>
     {!! $data->render() !!}
-    <p class="text-center text-primary"><small>Tutorial by LaravelTuts.com</small></p>
+    <p class="text-center text-primary">Copyright © 2013-2023 . UZBEKTOURISM<small></small></p>
 @endsection

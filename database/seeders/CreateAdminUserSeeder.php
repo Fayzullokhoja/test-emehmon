@@ -11,11 +11,6 @@ use Spatie\Permission\Models\Permission;
 
 class CreateAdminUserSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     *
-     * @return void
-     */
     public function run()
     {
         //Admin Seeder
@@ -24,13 +19,15 @@ class CreateAdminUserSeeder extends Seeder
             'email' => 'admin@laraveltuts.com',
             'password' => bcrypt('password')
         ]);
-      
-        $role = Role::create(['name' => 'Admin']);
-       
-        $permissions = Permission::pluck('id','id')->all();
-     
+
+        $role = Role::create([
+            'name' => 'Admin'
+        ]);
+
+        $permissions = Permission::pluck('id', 'id')->all();
+
         $role->syncPermissions($permissions);
-       
+
         $user->assignRole([$role->id]);
     }
 }
